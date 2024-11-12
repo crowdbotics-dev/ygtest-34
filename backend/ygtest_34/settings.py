@@ -83,10 +83,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
 ]
-LOCAL_APPS = [
-    "home",
-    "users.apps.UsersConfig",
-]
+LOCAL_APPS = ["home", "users.apps.UsersConfig", "connectors"]
 THIRD_PARTY_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
@@ -323,3 +320,5 @@ if AS_BUCKET_NAME:
     STATICFILES_STORAGE = "ygtest_34.storage_backends.AzureStaticStorage"
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
+CONNECTOR_GBC_CONENCTOR_USERNAME = env.str("CONNECTOR_GBC_CONENCTOR_USERNAME", "")
+CONNECTOR_GBC_CONENCTOR_PASSWORD = env.str("CONNECTOR_GBC_CONENCTOR_PASSWORD", "")
